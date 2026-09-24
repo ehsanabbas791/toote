@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>عجلة الحظ - Toote </title>
+<title>عجلة الحظ - Toote</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0a0c;
-    --surface:#141318;
-    --surface-2:#1c1b21;
+    --bg:#0a1628;
+    --surface:#0f1f3a;
+    --surface-2:#142350;
     --gold:#d4af37;
     --gold-light:#f3e0a0;
     --gold-dark:#8a621f;
-    --burgundy:#6e1f28;
-    --charcoal:#201f26;
+    --blue:#1e3a8a;
+    --blue-light:#3b82f6;
+    --blue-dark:#0c2456;
     --cream:#f3ecd9;
     --muted:#9c96a4;
     --disabled:#3a3940;
@@ -28,7 +29,7 @@
   html,body{
     margin:0;
     padding:0;
-    background:var(--bg);
+    background: linear-gradient(135deg, #0a1628 0%, #0f1f3a 50%, #1a2d52 100%);
     color:var(--cream);
     font-family:'Cairo', 'Segoe UI', Tahoma, sans-serif;
     min-height:100vh;
@@ -61,13 +62,14 @@
   }
 
   .brand span{
-    font-weight:800;
-    font-size:15px;
-    letter-spacing:.5px;
+    font-weight:900;
+    font-size:18px;
+    letter-spacing:1.2px;
     background:linear-gradient(135deg, var(--gold-light), var(--gold) 45%, var(--gold-dark));
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
   }
 
   h1{
@@ -102,16 +104,16 @@
     position:absolute;
     inset:0;
     border-radius:50%;
-    background:conic-gradient(from 0deg, var(--gold-light), var(--gold), var(--gold-dark), var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--blue-light), var(--gold), var(--gold-light));
     padding:10px;
-    box-shadow:0 10px 30px rgba(0,0,0,.55), inset 0 0 0 2px rgba(255,255,255,.08);
+    box-shadow:0 10px 30px rgba(212, 175, 55, 0.3), inset 0 0 0 2px rgba(255,255,255,.08);
   }
 
   .rim-inner{
     width:100%;
     height:100%;
     border-radius:50%;
-    background:var(--bg);
+    background: linear-gradient(135deg, #0a1628, #0f1f3a);
     padding:6px;
   }
 
@@ -132,12 +134,12 @@
     width:22%;
     height:22%;
     border-radius:50%;
-    background:radial-gradient(circle at 35% 30%, #8e2731, var(--burgundy) 60%, #430f16 100%);
+    background: radial-gradient(circle at 35% 30%, #3b82f6, var(--blue) 60%, var(--blue-dark) 100%);
     border:3px solid var(--gold);
     display:flex;
     align-items:center;
     justify-content:center;
-    box-shadow:0 4px 10px rgba(0,0,0,.5);
+    box-shadow:0 4px 10px rgba(212, 175, 55, 0.4);
     cursor:pointer;
     z-index:4;
   }
@@ -158,7 +160,7 @@
     min-height:20px;
     text-align:center;
     font-size:14px;
-    color:var(--muted);
+    color:var(--cream);
     margin-bottom:14px;
     line-height:1.7;
   }
@@ -182,7 +184,7 @@
   .btn:active{ transform:scale(.97); }
 
   .btn-primary{
-    background:linear-gradient(135deg, var(--gold-light), var(--gold) 50%, var(--gold-dark));
+    background: linear-gradient(135deg, var(--gold-light), var(--gold) 50%, var(--gold-dark));
     color:#241a06;
   }
 
@@ -240,12 +242,12 @@
   .result-card{
     width:100%;
     max-width:320px;
-    background:var(--surface);
-    border:1px solid rgba(212,175,55,.35);
+    background: linear-gradient(135deg, #0f1f3a, #142350);
+    border:2px solid rgba(212,175,55,.5);
     border-radius:20px;
     padding:28px 22px;
     text-align:center;
-    box-shadow:0 20px 50px rgba(0,0,0,.6);
+    box-shadow:0 20px 50px rgba(212, 175, 55, 0.2);
   }
 
   .result-icon{ font-size:44px; margin-bottom:10px; }
@@ -283,8 +285,8 @@
 <body>
 
   <div class="brand">
-    <div class="mark">🂡</div>
-    <span>SCARFACE</span>
+    <div class="mark">👑</div>
+    <span>TOOTE</span>
   </div>
   <h1>🎡 عجلة الحظ</h1>
 
@@ -324,7 +326,7 @@
     app.innerHTML = '<div class="error-box">⚠️ تعذّر تحميل العجلة.<br>الرجاء العودة للبوت والضغط على "🆓 اللفة المجانية" مجدداً.</div>';
   }
 
-  const SEGMENT_COLORS = ["#6e1f28", "#201f26"];
+  const SEGMENT_COLORS = ["#1e3a8a", "#0c2456"];
 
   function wrapLabel(label, maxCharsPerLine){
     const words = label.split(" ").filter(Boolean);
